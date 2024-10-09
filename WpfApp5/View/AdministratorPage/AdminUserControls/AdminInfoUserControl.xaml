@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="WpfApp5.View.AdministratorPage.AdminUserControls.AdminInfoUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp5.View.AdministratorPage.AdminUserControls"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="1000"
+             FontFamily="Consolas">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Margin="5">
+            <DataGrid x:Name="DataUserInfo"
+                      FontSize="15"
+                      Height="400"
+                      Width="950"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      CanUserSortColumns="False"
+                      Background="Gray"
+                      RowBackground="White"
+                      AlternatingRowBackground="#f0FFF0"
+                      GridLinesVisibility="Horizontal"
+                      ColumnHeaderHeight="50"
+                      CanUserAddRows="False"
+                      CanUserDeleteRows="False"
+                      CanUserResizeRows="False"
+                      Effect="{StaticResource MaterialDesignElevationShadow16}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="Auto" Header="ФИО" Binding="{Binding FIO}" FontSize="15"/>
+                    <DataGridTextColumn Width="Auto" Header="МОБ. НОМЕР" Binding="{Binding UserPhone}" FontSize="15"/>
+                    <DataGridTextColumn Width="Auto" Header="ЭЛЕКТРОННАЯ ПОЧТА" Binding="{Binding UserMail}" FontSize="15"/>
+                    <DataGridTextColumn Width="Auto" Header="НАВЫКИ" Binding="{Binding UserSkills}" FontSize="15"/>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Background="Gray"
+                                        Foreground="Gray"
+                                        x:Name="BtnDelete"
+                                        Click="BtnDelete_Click"
+                                        ToolTip="Удалить пользователя"
+                                        BorderBrush="Gray"
+                                        Style="{StaticResource MaterialDesignFlatLightButton}">
+                                    <StackPanel Orientation="Horizontal">
+                                        <materialDesign:PackIcon Kind="Remove"/>
+                                    </StackPanel>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+            
+    </Grid>
+</UserControl>

@@ -1,0 +1,78 @@
+﻿<Page x:Class="WpfApp5.View.AdministratorPage.MainAdministratorPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp5.View.AdministratorPage"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="1000"
+      FontFamily="Consolas">
+
+    <Grid>
+        <Border HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Width="980"
+                Height="480"
+                Background="Gray"
+                Effect="{StaticResource MaterialDesignElevationShadow16}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="*" />
+                    
+                </Grid.RowDefinitions>
+                <Menu Grid.Row="0"
+                      IsMainMenu="True"
+                      Style="{DynamicResource MaterialDesignMenu}"
+                      Background="Black"
+                      Foreground="LightGray">
+                    <Menu.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <DockPanel HorizontalAlignment="Stretch"/>
+                        </ItemsPanelTemplate>
+                    </Menu.ItemsPanel>
+                    <MenuItem Header="Информация о пользователях "
+                              Click="MenuItem_Click"
+                              HorizontalAlignment="Center"
+                              Cursor="Hand"
+                              Effect="{StaticResource MaterialDesignElevationShadow16}">
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="People"
+                                                     Foreground="LightGray"
+                                                     Width="20"
+                                                     Height="20"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Информация о работодателях"
+                              HorizontalAlignment="Center"
+                              Click="MenuEmployer_clik"
+                              Cursor="Hand"
+                              Effect="{StaticResource MaterialDesignElevationShadow16}">
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="PeopleGroup"
+                                                     Foreground="LightGray"
+                                                     Width="20"
+                                                     Height="20"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Информация о заказах"
+                              HorizontalAlignment="Center"
+                              Click="MenuItemOrder_Clik"
+                              Cursor="Hand"
+                              Effect="{StaticResource MaterialDesignElevationShadow16}">
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="OrderBoolAscending"
+                                                     Foreground="LightGray"
+                                                     Width="20"
+                                                     Height="20"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </Menu>
+                <Grid Grid.Row="1"
+                      x:Name="GridContentLoad"/>
+            </Grid>
+        </Border>
+        
+    </Grid>
+</Page>

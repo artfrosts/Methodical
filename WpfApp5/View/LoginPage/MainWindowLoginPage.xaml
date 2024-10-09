@@ -1,0 +1,135 @@
+﻿<Page x:Class="WpfApp5.View.LoginPage.MainWindowLoginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp5.View.LoginPage"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+            d:DesignHeight="500" d:DesignWidth="1000"
+FontFamily="Consolas">
+
+    <Grid>
+        <Border HorizontalAlignment="Center"
+         VerticalAlignment="Center"
+         CornerRadius="25"
+         Width="600"
+         Height="400"
+         Background="Gray"
+         Effect="{StaticResource MaterialDesignElevationShadow16}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="180" />
+                    <RowDefinition Height="220" />
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0"
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Top"
+                     Margin="0 20 0 0">
+                    <TextBlock Text="Фриланс Биржа"
+                        FontSize="25"
+                        FontWeight="SemiBold"
+                        Foreground="White"
+                        TextAlignment="Center"/>
+                    <TextBlock Text="Работа всем"
+                        Margin="0 10 0 0"
+      FontSize="40"
+      FontWeight="SemiBold"
+      Foreground="Black"
+      TextAlignment="Center"/>
+                    <TextBlock Text="Самая хорошая работа это высокооплачиваемое хобби"
+      FontSize="25"
+                 TextWrapping="Wrap"
+                        Width="400"
+                        Margin="0 10 0 0"
+      FontWeight="SemiBold"
+      Foreground="White"
+      TextAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1"
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Top">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Login"
+                                          Margin=" 0 7 5 0"
+                                          Foreground="Black"/>
+                        <TextBox Width="150"
+                          x:Name="TbLogin"
+                          FontSize="15"
+                          Foreground="Black"
+                          materialDesign:HintAssist.Hint="Введите логин"
+                          materialDesign:TextFieldAssist.HasClearButton="True"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"
+                         Margin="0 10 0 0">
+                        <materialDesign:PackIcon Kind="Key"
+                                          Margin="0 5 5 0"
+                                          Foreground="Black"/>
+                        <PasswordBox Width="150"
+                              x:Name="PsbPassword"
+                              FontSize="15"
+                              materialDesign:HintAssist.Hint="Введите пароль"
+                              materialDesign:TextFieldAssist.HasClearButton="True"/>
+                    </StackPanel>
+                    <StackPanel Margin="0 10 0 0">
+                        <Button Background="Black"
+                         Foreground="White"
+                         x:Name="BtnLogin"
+                         Click="BtnLogin_Click"
+                         BorderThickness="0"
+                         Style="{StaticResource MaterialDesignRaisedButton}"
+                         materialDesign:ButtonProgressAssist.Value="-1"
+                         materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+                         materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+                         IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor,AncestorType=Window}}">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="User"
+                                                          Margin="0 0 5 0"/>
+                                <TextBlock Text="Выйти на работу "
+                                    FontWeight="SemiBold"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Background="Black"
+                         Foreground="White"
+                         x:Name="BtnWork"
+                         Click="BtnWork_Click"
+                         BorderThickness="0"
+                         Margin="0 10 0 0"
+                         Style="{StaticResource MaterialDesignRaisedButton}"
+                         materialDesign:ButtonProgressAssist.Value="-1"
+                         materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+                         materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+                         IsEnabled="{Binding DataContext.ConsolasEnabled,RelativeSource={RelativeSource FindAncestor,AncestorType=Window}}">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="UserAlert"
+                                                  Margin="0 0 5 0"/>
+                                <TextBlock Text="предложить работу"
+                                    FontWeight="SemiBold"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Background="Black"
+ Foreground="White"
+ x:Name="BtnRegistration"
+ Click="BtnRegistration_Click"
+ BorderThickness="0"
+ Margin="0 10 0 0"
+ Style="{StaticResource MaterialDesignRaisedButton}"
+ materialDesign:ButtonProgressAssist.Value="-1"
+ materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+ materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+ IsEnabled="{Binding DataContext.ConsolasEnabled,RelativeSource={RelativeSource FindAncestor,AncestorType=Window}}">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Register"
+                          Margin="0 0 5 0"/>
+                                <TextBlock Text="Начать работать"
+            FontWeight="SemiBold"/>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+
+                </StackPanel>
+            </Grid>
+        </Border>
+
+    </Grid>
+</Page>
